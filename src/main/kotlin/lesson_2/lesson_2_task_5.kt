@@ -7,7 +7,9 @@ fun main() {
     val firstContribution = 70000
     val percent = 16.7
     val timePeriod = 20
-    val result: Double = (1 + percent / 100).pow(timePeriod) * firstContribution
-//я что-то не смог разобраться, как сделать три знака после запятой
+    var result = (1 + percent / 100).pow(timePeriod) * firstContribution
+    val formatted = String.format("%.3f", result);
+
     println(result)
+    println(formatted)
 }
