@@ -1,10 +1,10 @@
 package lesson_3
 
 fun main() {
-    var move = "D2-D4;0"
-    var from = "${move[0]}${move[1]}"
-    var to = "${move[3]}${move[4]}"
-    var id = move[6]
+    val move = "D2-D4;0".split('-', ',', ';')
+    val from = move[0]
+    val to = move[1]
+    val id = move[2]
 
     println(from)
     println(to)
