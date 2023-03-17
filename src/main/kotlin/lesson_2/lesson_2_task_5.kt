@@ -7,8 +7,8 @@ fun main() {
     val firstContribution = 70000
     val percent = 16.7
     val timePeriod = 20
-    var result = (1 + percent / 100).pow(timePeriod) * firstContribution
-    val formatted = String.format("%.3f", result);
+    val result = (1 + percent / 100).pow(timePeriod) * firstContribution
+    val formatted = String.format("%.3f", result)
 
     println(result)
     println(formatted)
