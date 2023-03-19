@@ -1,9 +1,7 @@
 package lesson_2
-fun main() {
-    val middleMark = (3+4+3+5)/4.0
-
 
 import kotlin.math.pow
+
 fun main() {
     val firstContribution = 70000
     val percent = 16.7
@@ -13,7 +11,5 @@ fun main() {
 
     println(result)
     println(formatted)
-
-    println(middleMark)
 
 }
