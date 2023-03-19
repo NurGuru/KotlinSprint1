@@ -1,8 +1,6 @@
 package lesson_2
 
 import kotlin.math.pow
-
-
 fun main() {
     val firstContribution = 70000
     val percent = 16.7
