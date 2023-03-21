@@ -5,10 +5,10 @@ fun main() {
     val teammates = readln().toInt()
     val foodBoxes = readln().toInt()
     val goodWeather = readln().toBoolean()
-    val mayGo = breaks == false && teammates >= 55 && teammates < 70 && foodBoxes> MIN_FOOD_BOXES
-            && goodWeather==true || false
-            ||breaks == true && teammates >= 55 && teammates == 70 && foodBoxes> MIN_FOOD_BOXES
-            && goodWeather==true
+    val mayGo = !breaks && teammates >= 55 && teammates < 70 && foodBoxes > MIN_FOOD_BOXES
+            && goodWeather || !goodWeather
+            || breaks && teammates == 70 && foodBoxes > MIN_FOOD_BOXES
+            && goodWeather == true
 
     println("Можно отправляться? - $mayGo")
 }
