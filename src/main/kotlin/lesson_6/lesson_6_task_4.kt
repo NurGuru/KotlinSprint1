@@ -13,6 +13,7 @@ fun main() {
         }
         if (tryNumber == winNumber) {
             println("Это была великолепная игра")
+            break
         }
     }
     println("Было загадано число $winNumber")
