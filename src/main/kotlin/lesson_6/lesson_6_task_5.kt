@@ -16,6 +16,8 @@ fun main() {
             task = firstNumber + secondNumber
             println("Неверно! Попробуйте еще раз!\n Сколько будет $firstNumber + $secondNumber = ")
             answer = readln().toInt()
+        } else {
+            break
         }
 
     }
