@@ -4,13 +4,19 @@ fun main() {
     val arrayOfIngredients = arrayOf("яйцо", "грибы", "сметана", "перец", "соль")
     println("Какой ингредиент найти?")
     val searchingIngredient = readln()
+    var found = true
 
     for (i in arrayOfIngredients) {
-        if (i == searchingIngredient) {
-            println("Ингредиент [$i] в рецепте есть")
-            break
+        if (i != searchingIngredient) {
+            found = false
         } else {
-            println("Такого ингредиента в рецепте нет.")
+            found = true
+            break
         }
+    }
+    if (found) {
+        println("Ингредиент [$searchingIngredient] в рецепте есть")
+    } else {
+        println("Такого ингредиента в рецепте нет.")
     }
 }
