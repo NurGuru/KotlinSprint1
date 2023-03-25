@@ -1,5 +1,6 @@
 package lesson_8
 
+
 fun main() {
     val arrayOfIngredients = arrayOf("яйцо", "грибы", "сметана", "перец", "соль")
     println("Какой ингредиент найти?")
