@@ -8,7 +8,7 @@ fun main() {
 }
 
 fun createPassword(length: Int) {
-    val symbols = (1..9)+( "# $ % & ' ( ) * + , - . / : ; &lt; = &gt; ? @ [  ] ^ _ `   ~").split(" ")
+    val symbols = (1..9)+( " \" # \$ % & ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \\ ] ^ _ `   ~").split(" ")
     var password = ""
     for (i in 1..length) {
         password += symbols.random()
