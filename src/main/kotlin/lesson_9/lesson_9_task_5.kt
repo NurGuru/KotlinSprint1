@@ -2,11 +2,20 @@ package lesson_9
 
 fun main() {
     println("Введите 5 ингредиентов")
-    var ingredients = mutableListOf(readln(), readln(), readln(), readln(), readln())
+    var ingredients = mutableSetOf(readln())
 
+    for (i in 0..3){
+        ingredients.add("${readln()}")
+    }
 
+    ingredients=ingredients.sorted().toMutableSet()
     ingredients.add(".")
-    ingredients.map {ingredients[2].uppercase() }
+
     println(ingredients)
 
+
+//    ingredients.toMutableList()[0].capitalize()
+//    ingredients.first().uppercase()
+//    println( )
+//    ingredients.add(".")
 }
