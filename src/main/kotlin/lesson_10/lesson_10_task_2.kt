@@ -6,13 +6,13 @@ fun main() {
     println("Введите пароль")
     val password = readln()
 
-    if (validation(password.length)) {
+    if (validate(password.length)) {
         println("Логин или пароль недостаточно длинные")
     } else {
         println("Добро пожаловать")
     }
 }
 
-fun validation(passwordLength: Int): Boolean {
+fun validate(passwordLength: Int): Boolean {
     return passwordLength <= 4
 }
