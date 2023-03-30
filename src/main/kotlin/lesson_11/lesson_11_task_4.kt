@@ -1,11 +1,14 @@
 package lesson_11
 
+class RelativesAndFriends(val status: String, val name: String)
+
 class Contact(
     val firstName: String,
     val secondName: String,
-    val mobilePhone: Long, homePhone: Long,
+    val mobilePhone: Long,
+    val homePhone: Long,
     val mail: String,
-    val favoriteContacts: List<String>,
+    val favoriteContacts: List<RelativesAndFriends>,
 ) {
     fun writeMessage() {
         println("Написать сообщение")
@@ -33,6 +36,10 @@ fun main() {
         89999994242,
         89998884242,
         "mail@mail.ru",
-        favoriteContacts = listOf("жена", "подруга", "подруга")
+        listOf(
+            RelativesAndFriends("жена", "Username"),
+            RelativesAndFriends("подруга", "Username"),
+            RelativesAndFriends("жена", "Username"),
+        )
     )
 }
