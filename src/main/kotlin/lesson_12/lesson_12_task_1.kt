@@ -24,4 +24,5 @@ fun main() {
     weatherToday.rain = false
     weatherToday.atmospherePressure = 200
     weatherToday.printWeather()
+
 }
