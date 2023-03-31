@@ -9,14 +9,14 @@ fun main() {
         val machineShot = makeShot()
 
         if (humanShot > machineShot) {
-            println("Победило человечество!!!")
+            println("Победило человечество!!!\n")
             println()
             humanWins += +1
         } else {
             println("Победила машина!!!")
             println()
         }
-    } while (newRound(humanWins) == "да")
+    } while (newRound(humanWins))
 
 }
 
@@ -29,12 +29,11 @@ fun makeShot(): Int {
 
 }
 
-fun newRound(humanWinss: Int): String {
+fun newRound(humanWinss: Int): Boolean {
     println("Хотите бросить еще раз?")
     val answer = readln()
     if (answer != "да") {
         println("Вы выйграли $humanWinss раз")
     }
-    return answer
-
+    return answer == "да"
 }
