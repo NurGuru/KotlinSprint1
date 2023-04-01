@@ -20,7 +20,7 @@ fun main() {
 
 }
 
-fun makeShot(): Int {
+fun makeShot1(): Int {
     val shot1 = (1..6).random()
     val shot2 = (1..6).random()
     val shotSum = shot1 + shot2
