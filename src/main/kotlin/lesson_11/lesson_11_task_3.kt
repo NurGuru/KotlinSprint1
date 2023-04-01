@@ -2,8 +2,8 @@ package lesson_11
 
 enum class UserStatus(val label: String) {
     TALK("разговаривает"),
-    MIC_OFF(".."),
-    USER_MUTED("..");
+    MIC_OFF("микрофон выключен"),
+    USER_MUTED("пользователь отключен");
 }
 
 class RoomCard(
@@ -39,8 +39,6 @@ fun main() {
     rooms.forEach {
         println("${it.roomName},${it.img},${it.members}")
     }
-
-
 }
 
 
