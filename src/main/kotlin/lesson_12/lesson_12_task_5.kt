@@ -3,50 +3,42 @@ package lesson_12
 import kotlin.random.Random
 
 class WeatherChange5(
-    val dayTemperature: Int,
+    var dayTemperature: Int,
     val nightTemperature: Int,
     val rain: Boolean,
     val atmospherePressure: Int
-) {
-
-}
+)
 
 fun main() {
+    var middleDayTemperature = 0
+    var middleNightTemperature = 0
+    var middleAtmosphere = 0
+    var rainyDays = 0
+    val list: MutableList<WeatherChange5> = mutableListOf()
 
-//    val randomValues = WeatherChange5(
-//            dayTemperature = (10..36).random(),
-//            nightTemperature = (-5..15).random(),
-//            rain = Random.nextBoolean(),
-//            atmospherePressure = (600..800).random()
-//        )
-    val list = mutableListOf<WeatherChange5>()
-    for (i in 0..10) {
-        list.add(
-            WeatherChange5(
-                dayTemperature = (10..36).random(),
-                nightTemperature = (-5..15).random(),
-                rain = Random.nextBoolean(),
-                atmospherePressure = (600..800).random())
+    for (i in 1..10) {
+        val newDay = WeatherChange5(
+            dayTemperature = (10..36).random(),
+            nightTemperature = (5..15).random(),
+            rain = Random.nextBoolean(),
+            atmospherePressure = (600..800).random()
         )
-        println(list)
+        list.add(newDay)
+        middleDayTemperature += newDay.dayTemperature / 10
+        middleNightTemperature += newDay.nightTemperature / 10
+        middleAtmosphere += newDay.atmospherePressure / 10
+        if (newDay.rain) {
+            rainyDays += 1
+        }
     }
-
-
-
+    println(middleDayTemperature)
+    println(middleNightTemperature)
+    println(middleAtmosphere)
+    println(rainyDays)
 }
 
 
-//init {
-//        println(dayTemperature)
-//        println(nightTemperature)
-//        println(rain)
-//        println(atmospherePressure)
-//
-//    }
 
 
-//val weatherYesterday = WeatherChange5(26, 12, true, 200)
-//    println()
-//    val weatherToday = WeatherChange5(35, 20, false, 400)
-//    println()
-//    val weatherUsually = WeatherChange5(24, 11, false, 300)
+
+
