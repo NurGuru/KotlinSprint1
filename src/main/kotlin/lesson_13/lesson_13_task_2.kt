@@ -1,33 +1,18 @@
 package lesson_13
 
+class TelephoneBook1(val name: String, val phone: Long, var company: String? = null) {
 
-class TelephoneBook2(
-    val name: String,
-    val phone: Long,
-    var company: String?
-) {
     fun printInfo() {
         val _name = name
         val _phone = phone
         val _company = company ?: "[не указано]"
-        println("Имя:$_name\nНомер:$_phone\nКомпания:$_company\n")
+
+        println("Имя:$_name\nНомер:$_phone\nКомпания:$_company")
     }
 }
 
 fun main() {
-    val contact1 = TelephoneBook2("Ростислав", 89123456789, null)
-    val contact2 = TelephoneBook2("Ростислав", 89123456789, "Tg")
-    val contact3 = TelephoneBook2("Ростислав", 89123456789, "VK")
-    val list: MutableList<TelephoneBook2> = mutableListOf()
+    val contact = TelephoneBook1("Ростислав", 89123456789, null)
 
-    list.add(contact1)
-    list.add(contact2)
-    list.add(contact3)
-
-    for (i in list) i.printInfo()
+    contact.printInfo()
 }
-
-
-
-
-
