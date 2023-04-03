@@ -1,7 +1,7 @@
 package lesson_13
 
 
-class TelephoneBook2(
+class TelephoneBook22(
     val name: String,
     val phone: Long,
     var company: String?
@@ -15,10 +15,10 @@ class TelephoneBook2(
 }
 
 fun main() {
-    val contact1 = TelephoneBook2("Ростислав", 89123456789, null)
-    val contact2 = TelephoneBook2("Ростислав", 89123456789, "Tg")
-    val contact3 = TelephoneBook2("Ростислав", 89123456789, "VK")
-    val list: MutableList<TelephoneBook2> = mutableListOf()
+    val contact1 = TelephoneBook22("Ростислав", 89123456789, null)
+    val contact2 = TelephoneBook22("Ростислав", 89123456789, "Tg")
+    val contact3 = TelephoneBook22("Ростислав", 89123456789, "VK")
+    val list: MutableList<TelephoneBook22> = mutableListOf()
 
     list.add(contact1)
     list.add(contact2)
