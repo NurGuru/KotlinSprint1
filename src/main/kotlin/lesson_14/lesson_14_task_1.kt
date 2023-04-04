@@ -17,7 +17,7 @@ class StandartShip(
 }
 
 fun main() {
-    val standartShip=StandartShip(
+    val standartShip = StandartShip(
         "Корабль",
         "Стандартный  корабль",
         50,
