@@ -1,7 +1,11 @@
 package lesson_14
 
 open class StandartShip1(
-    val name: String, val type: String, val speed: Int, val loadAbility: Int, var aceBrake: Boolean = false
+    val name: String,
+    val type: String,
+    val speed: Int,
+    val loadAbility: Int,
+    var aceBrake: Boolean = false
 ) {
     fun printShipSpeed() {
         println("Скорость корабля $name: $speed")
