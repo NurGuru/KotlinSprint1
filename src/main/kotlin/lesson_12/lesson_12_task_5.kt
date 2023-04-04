@@ -24,18 +24,19 @@ fun main() {
             atmospherePressure = (600..800).random()
         )
         list.add(newDay)
-
     }
-    middleDayTemperature += newDay.dayTemperature / 10
-    middleNightTemperature += newDay.nightTemperature / 10
-    middleAtmosphere += newDay.atmospherePressure / 10
-    if (newDay.rain) {
-        rainyDays += 1
+    list.forEach { middleDayTemperature += (it.dayTemperature) / 10 }
+    list.forEach { middleNightTemperature += (it.nightTemperature) / 10 }
+    list.forEach { middleAtmosphere += (it.atmospherePressure) / 10 }
+    for (i in list) {
+        if (i.rain) rainyDays += +1
     }
-
 
     println(middleDayTemperature)
     println(middleNightTemperature)
     println(middleAtmosphere)
     println(rainyDays)
 }
+
+
+
