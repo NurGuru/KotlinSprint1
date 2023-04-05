@@ -25,9 +25,14 @@ fun main() {
         )
         list.add(newDay)
     }
-    list.forEach { middleDayTemperature += (it.dayTemperature) / 10 }
-    list.forEach { middleNightTemperature += (it.nightTemperature) / 10 }
-    list.forEach { middleAtmosphere += (it.atmospherePressure) / 10 }
+    list.forEach {
+        middleDayTemperature += (it.dayTemperature) / 10
+        middleNightTemperature += (it.nightTemperature) / 10
+        middleAtmosphere += (it.atmospherePressure) / 10
+        if (it.rain) rainyDays += +1
+    }
+
+
     for (i in list) {
         if (i.rain) rainyDays += +1
     }
