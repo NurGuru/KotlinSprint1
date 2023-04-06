@@ -32,15 +32,14 @@ fun main() {
         if (it.rain) rainyDays += +1
     }
 
-
     for (i in list) {
         if (i.rain) rainyDays += +1
     }
 
-    println(middleDayTemperature)
-    println(middleNightTemperature)
-    println(middleAtmosphere)
-    println(rainyDays)
+    println("Средняя температура днем: $middleDayTemperature, ночью: $middleNightTemperature")
+    println("среднее атмосферное давление: $middleAtmosphere")
+    println("Дождливых дней: $rainyDays")
+
 }
 
 
