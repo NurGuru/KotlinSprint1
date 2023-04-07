@@ -1,7 +1,7 @@
 package lesson_11
 
-class User(val id: Int, val login: String, var password: String, val mail: String, var bio: String = "") {
-    fun printUserInfo(user: User) {
+class User2(val id: Int, val login: String, var password: String, val mail: String, var bio: String = "") {
+    fun printUserInfo(user: User2) {
         println("${user.id} ${user.login} ${user.password} ${user.mail}")
     }
 
@@ -21,7 +21,6 @@ class User(val id: Int, val login: String, var password: String, val mail: Strin
             println("Введен неверный пароль!!!")
         }
     }
-
     fun sendMessage(message: String) {
         println(message)
     }
@@ -29,7 +28,7 @@ class User(val id: Int, val login: String, var password: String, val mail: Strin
 
 fun main() {
 
-    val userDave = User(7, "MrDave", "dave0707", "dave@mail.ru")
+    val userDave = User2(7, "MrDave", "dave0707", "dave@mail.ru")
 
     userDave.printUserInfo(userDave)
     println()
@@ -40,5 +39,4 @@ fun main() {
     println("Какое сообщение отправить пользователю??")
     val message = readln()
     userDave.sendMessage(message)
-
 }
