@@ -1,24 +1,33 @@
 package lesson_15
 
-abstract class Message(val text: String) {
+abstract class Message(val text: Byte) {
     fun connectToServer() {
         println("Соединение с сервером...")
     }
 
-    fun sendText() {
+    open fun sendText() {
         println("Отправка сообщения:\n$text")
     }
 }
 
-class Temperature(text: String) : Message(text)
-class Precipitation(text: String) : Message(text)
+class Temperature(text: Byte) : Message(text) {
+    override fun sendText() {
+        println("Отправка сообщения:\nТемпература:$text")
+    }
+}
+
+class Precipitation(text: Byte) : Message(text) {
+    override fun sendText() {
+        println("Отправка сообщения:\nОсадки:$text мм рт ст")
+    }
+}
 
 fun main() {
-    val sendTemperature = Temperature("Температура: -8")
+    val sendTemperature = Temperature(-8)
     sendTemperature.connectToServer()
     sendTemperature.sendText()
     println()
-    val sendPrecipitation = Precipitation("Выпало много снега")
+    val sendPrecipitation = Precipitation(12)
     sendPrecipitation.connectToServer()
     sendPrecipitation.sendText()
 }
