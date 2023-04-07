@@ -14,19 +14,24 @@ interface Swim {
 
 class Karas() : Swim {
     override fun swimming() {
-        println("Карась плавающее существо")
+        println("Карась плавает")
     }
 }
 
 class Seagull() : Fly {
     override fun flying() {
-        println("Чайка летающее существо")
+        println("Чайка  летает")
     }
 }
 
-class Duck() : Fly {
+
+class Duck() : Fly, Swim {
     override fun flying() {
-        println("Утка летающее существо")
+        println("Утка летает")
+    }
+
+    override fun swimming() {
+        println("Утка плавает")
     }
 }
 
@@ -39,4 +44,5 @@ fun main() {
 
     val duck = Duck()
     duck.flying()
+    duck.swimming()
 }
