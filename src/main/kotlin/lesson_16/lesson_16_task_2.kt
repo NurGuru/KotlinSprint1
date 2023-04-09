@@ -2,7 +2,7 @@ package lesson_16
 
 import kotlin.math.pow
 
-class Circle(protected val radius: Double) {
+class Circle(private val radius: Double) {
     private val pi: Double = 3.14
 
     fun getCirclePerimeter(): Double {
