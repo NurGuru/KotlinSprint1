@@ -5,7 +5,7 @@ class Player(
     private var health: Int,
     var punchStrength: Int,
 ) {
-    var playerAlive = true
+
 
     fun takeDamage(takingDamageStrength: Int) {
         println("Нанесено $takingDamageStrength урона здоровью ")
@@ -15,14 +15,13 @@ class Player(
     }
 
     private fun death() {
-        playerAlive = false
         punchStrength = 0
         health = 0
         println("Потрачено!")
     }
 
     fun healingSlave(heal: Int) {
-        if (playerAlive) {
+        if (health > 0) {
             println("Востановлено $heal очков здоровья")
             health += heal
             println("Ваше здоровье = $health")
