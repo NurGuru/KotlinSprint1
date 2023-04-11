@@ -1,7 +1,7 @@
 package lesson_16
 
 class Order(
-    val number: Int,
+    private val number: Int,
     private var orderStatus: String
 ) {
     private var orderStatusChanging = false
@@ -10,8 +10,8 @@ class Order(
         orderStatusChanging = true
     }
 
-    fun changeStatus() {
-        if (orderStatusChanging) orderStatus = "Заказ готов"
+    fun changeStatus(newStatus: String) {
+        if (orderStatusChanging) orderStatus = newStatus
         println(orderStatus)
     }
 }
@@ -19,6 +19,6 @@ class Order(
 fun main() {
     val order = Order(47, "Заказ не готов")
     order.sendRequest()
-    order.changeStatus()
+    order.changeStatus("Заказ готов")
 
 }
