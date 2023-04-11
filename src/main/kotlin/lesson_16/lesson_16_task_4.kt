@@ -13,6 +13,7 @@ class Order(
     fun changeStatus(newStatus: String) {
         if (orderStatusChanging) orderStatus = newStatus
         println(orderStatus)
+        orderStatusChanging = false
     }
 }
 
