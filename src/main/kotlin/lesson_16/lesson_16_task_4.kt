@@ -5,12 +5,13 @@ class Order(
     private var orderStatus: String
 ) {
     private var orderStatusChanging = false
-    fun sendRequest() {
+    fun sendRequest(newStatus: String) {
         println("Заявка отправлена")
         orderStatusChanging = true
+        changeStatus(newStatus)
     }
 
-    fun changeStatus(newStatus: String) {
+    private fun changeStatus(newStatus: String) {
         if (orderStatusChanging) orderStatus = newStatus
         println(orderStatus)
         orderStatusChanging = false
@@ -19,7 +20,5 @@ class Order(
 
 fun main() {
     val order = Order(47, "Заказ не готов")
-    order.sendRequest()
-    order.changeStatus("Заказ готов")
-
+    order.sendRequest("теперь готов!")
 }
