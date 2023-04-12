@@ -2,25 +2,26 @@ package lesson_11
 
 
 class Forum() {
-    var mainId: Int=0
+    var mainId: Int = 0
     var messages: MutableList<NewMessage> = mutableListOf()
+    var users: MutableList<User5> = mutableListOf()
 
     fun createNewUser(login: String, password: String, mail: String): User5 {
-        mainId+=+1
+        mainId += 1
         return User5(mainId, login, password, mail)
 
     }
 
     fun newMessage(authorId: Int, authorName: String, message: String): NewMessage {
-
+        messages.add(NewMessage(authorId, authorName, message))
         return NewMessage(authorId, authorName, message)
     }
 
     fun printTread() {
 
-        for (i in messages) {
-            var messageAuthorName= messages[1]
-            var messageText= messages[2]
+        for (message in messages) {
+            var messageAuthorName = //??
+            var messageText = //??
             println("$messageAuthorName: $messageText")
             Thread.sleep(1000)
         }
@@ -45,7 +46,7 @@ fun main() {
 
     creator.messages.addAll(
         listOf(
-            message2FromNewUser1,
+            message1FromNewUser1,
             message2FromNewUser1,
             message1FromNewUser2,
             message2FromNewUser2
