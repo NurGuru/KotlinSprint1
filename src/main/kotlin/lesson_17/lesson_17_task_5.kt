@@ -8,8 +8,8 @@ class User17(
 
     var userPassword = password
         set(value) = println("Вы не можете поменять пароль!")
-//        get() = "****"
-//        field.length я как-то через длину пароля пытался, но не могу понять как мне потом  строку "*" умножить на длину
+        get() = "*".repeat(field.length)
+
 
     var userLogin = login
         set(value) {
