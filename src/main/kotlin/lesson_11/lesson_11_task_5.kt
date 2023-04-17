@@ -1,61 +1,59 @@
 package lesson_11
 
-
-class Forum() {
-    var mainId: Int = 0
-    var messages: MutableList<NewMessage> = mutableListOf()
-    var users: MutableList<User5> = mutableListOf()
-
-    fun createNewUser(login: String, password: String, mail: String): User5 {
-        mainId += 1
-        return User5(mainId, login, password, mail)
-
-    }
-
-    fun newMessage(authorId: Int, authorName: String, message: String): NewMessage {
-        messages.add(NewMessage(authorId, authorName, message))
-        return NewMessage(authorId, authorName, message)
-    }
-
-    fun printTread() {
-
-        for (message in messages) {
-            var messageAuthorName = //??
-            var messageText = //??
-            println("$messageAuthorName: $messageText")
-            Thread.sleep(1000)
-        }
-//
-    }
-}
-
-class User5(val id: Int, val login: String, val password: String, val mail: String)
-class NewMessage(authorId: Int, authorName: String, message: String)
-
 fun main() {
     val creator = Forum()
+    val newUser1 = creator.newUser("John", "0707", "john@mail.ru")
+    val newUser2 = creator.newUser("Jack", "0505", "jack@mail.ru")
 
-    val newUser1 = creator.createNewUser("John", "0707", "john@mail.ru")
-    val message1FromNewUser1 = creator.newMessage(newUser1.id, newUser1.login, "Hi Jack!")
-    val message2FromNewUser1 = creator.newMessage(newUser1.id, newUser1.login, "How are you?")
+    creator.newMessage(newUser1.id, "Hello, Jack!")
+    creator.newMessage(newUser2.id, "Hi, John!")
+    creator.newMessage(newUser1.id, "How are you?")
+    creator.newMessage(newUser2.id, "I am fine!")
 
-
-    val newUser2 = creator.createNewUser("Jack", "0505", "jack@mail.ru")
-    val message1FromNewUser2 = creator.newMessage(newUser2.id, newUser2.login, "Hi John!")
-    val message2FromNewUser2 = creator.newMessage(newUser2.id, newUser2.login, "I am fine!")
-
-    creator.messages.addAll(
-        listOf(
-            message1FromNewUser1,
-            message2FromNewUser1,
-            message1FromNewUser2,
-            message2FromNewUser2
-        )
-    )
-
-
-
-    creator.printTread()
-
+    creator.printThread()
 }
 
+class User5(
+    val id: Int,
+    val userName: String,
+    val password: String,
+    val email: String,
+)
+
+class Message(
+    val id: Int,
+    val author: User5?,
+    val text: String,
+)
+
+class Forum(
+    private var messageId: Int = 0,
+    private var userId: Int = 0,
+    private val authors: MutableList<User5> = mutableListOf(),
+    private val messages: MutableList<Message> = mutableListOf(),
+) {
+    fun newUser(username: String, password: String, email: String): User5 {
+        val user = User5(
+            id = userId,
+            userName = username,
+            password = password,
+            email = email,
+        )
+        authors.add(user)
+        userId++
+        return user
+    }
+
+    fun newMessage(authorId: Int, text: String) {
+        val user = authors.find { it.id == authorId }
+        val message = Message(id = messageId, author = user, text = text)
+        messages.add(message)
+        messageId++
+    }
+
+    fun printThread() {
+        messages.forEach {
+            println("${it.author?.userName}: ${it.text}")
+        }
+    }
+}
