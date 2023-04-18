@@ -1,9 +1,7 @@
 package lesson_18
 
-open class Box() {
-    open fun getBoxSquare(): Int {
-        return getBoxSquare()
-    }
+abstract class Box {
+    abstract fun getBoxSquare(): Int
 }
 
 class Rectangle(
