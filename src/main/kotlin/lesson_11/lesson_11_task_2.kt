@@ -21,7 +21,6 @@ class User2(val id: Int, val login: String, var password: String, val mail: Stri
             println("Введен неверный пароль!!!")
         }
     }
-
     fun sendMessage(message: String) {
         println(message)
     }
@@ -40,5 +39,4 @@ fun main() {
     println("Какое сообщение отправить пользователю??")
     val message = readln()
     userDave.sendMessage(message)
-
 }
