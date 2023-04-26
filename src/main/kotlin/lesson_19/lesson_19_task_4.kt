@@ -24,6 +24,5 @@ fun main() {
         file.add(newPerson)
 
     }
-
     file.forEach { println("${it.name}, ${it.gender}") }
 }
